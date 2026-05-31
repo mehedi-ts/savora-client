@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import PrimaryBtn from "./ui/PrimaryBtn";
+import SecondaryBtn from "./ui/SecondaryBtn";
 
 const Navbar = () => {
   const publicNavLinks = [
@@ -25,12 +26,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="border py-4">
-      <div className="main-nav max-w-7xl border mx-auto border-orange">
-        <div className=" relative w-47 h-14 border">
+    <nav className="shadow-sm py-4 stack top-0 z-75">
+      <div className="main-nav max-w-7xl  mx-auto border-orange  flex justify-between items-center">
+        <div className=" relative w-40 h-10 ">
           <Image src="/images/savora-logo.png" alt="logo" fill></Image>
         </div>
-        <ul>
+        <ul className="flex items-center justify-between gap-6 font-medium">
           {publicNavLinks.map((link, index) => {
             return (
               <li key={index}>
@@ -39,7 +40,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div className="search-box max-w-xl">
+        {/* <div className="search-box max-w-xl">
           <SearchField>
             <Label />
             <SearchField.Group>
@@ -50,9 +51,10 @@ const Navbar = () => {
             <Description />
             <FieldError />
           </SearchField>
-        </div>
-        <div>
-          <PrimaryBtn>Login</PrimaryBtn>
+        </div> */}
+        <div className="flex items-center gap-4">
+          <SecondaryBtn>Login</SecondaryBtn>
+          <PrimaryBtn>Register</PrimaryBtn>
         </div>
       </div>
     </nav>
